@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Special Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .schedule {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .schedule h2 {
+            color: #4682b4;
+        }
+        .schedule ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .schedule li {
+            background-color: #e6e6fa;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Special Day</h1>
+        <p>Hey sweetheart, Here's our plan for the second day 16(August):</p>
+        <div class="schedule">
+            <h2>Schedule</h2>
+            <ul>
+                <li>9:30 AM - You will pick me up from the hotel.</li>
+                <li>10:00 AM - We will go for breakfast.</li>
+                <li>11:00 AM - We Will Decide,where we go to spent for some Memoriable Time .</li>
+                <li>1:00 AM - We will go for lunch.</li>
+                <li>3:30 PM - It hard to say final GOOD BYE!.</li>
+            </ul>
+        </div>
+        <div id="countdown"></div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Aug 16, 2024 09:30:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "It's time to meet!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
